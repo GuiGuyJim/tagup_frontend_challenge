@@ -4,6 +4,9 @@
 Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens  
 Project not tested with a mobile device or with touch input  
 Project only manually tested with these browsers: Firefox (v.78.0.2) on Linux  
+We're importing the entire BootstrapVue component set; this causes performance warnings for the production build.
+Likely those warnings could be eliminated via using BoostrapVue in a different way.
+See: [BootstrapVue's Getting Started documentation, especially smaller bundles](https://bootstrap-vue.org/docs).
 
 #### Prerequisites
 Node.js  (built and tested with version: 12.8.3)  
