@@ -41,7 +41,10 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": {},
+    "rules": { 
+        "indent": ["warn", "tab"],
+        "no-mixed-spaces-and-tabs": ["warn", "smart-tabs"]
+    },
     "overrides": [
       {
         "files": [
@@ -53,6 +56,10 @@
         }
       }
     ]
+  },
+  "prettier": {
+    "useTabs": true,
+    "vueIndentScriptAndStyle": true
   },
   "browserslist": [
     "> 1%",
