@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <h1>Welcome to Your Vue.js App</h1>
+    <img alt="Vue logo" src="./assets/logo_at_2x.png" />
+    <h1>Jim's Tagup Front-End Challenge</h1>
   </div>
 </template>

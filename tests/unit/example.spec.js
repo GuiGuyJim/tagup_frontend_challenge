@@ -3,5 +3,5 @@ import App from "@/App.vue";
 
 test("App should work", () => {
   const wrapper = shallowMount(App);
-  expect(wrapper.text()).toMatch(`Welcome to Your Vue.js App`);
+  expect(wrapper.text()).toMatch(`Jim's Tagup Front-End Challenge`);
 });
