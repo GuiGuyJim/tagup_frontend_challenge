@@ -1,15 +1,14 @@
 # tagup_frontend_challenge
 
 #### Known Limitations and Considerations
-Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens
-Project not tested with a mobile device or with touch input
-Project only manually tested with these browsers: Firefox (v.78.0.2)
+Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens  
+Project not tested with a mobile device or with touch input  
+Project only manually tested with these browsers: Firefox (v.78.0.2)  
 
 #### Prerequisites
 Node.js  (built and tested with version: 12.8.3)  
 NPM  (built and tested with version: 6.14.6)  
-Vue.js  (build and tested with version: 3.0.0-rc.5)  
-Vue CLI  (built and tested with version: 4.5.2)
+Vue CLI  (built and tested with version: 4.5.2 -- uses Vue.js version: 3.0.0-rc.5)
 
 #### Project setup
 ```
@@ -41,8 +40,8 @@ npm run lint
 #### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-#### Folder Structure
-`/design_assets` - may contain wireframes, color scheme info, other assets  (FOR REFERENCE ONLY)
+#### Folder Structure Notes
+`/design_assets` - may contain wireframes, color scheme reference, other non-buildable assets  (FOR REFERENCE ONLY)
 
 #### License & Copyrights
 
