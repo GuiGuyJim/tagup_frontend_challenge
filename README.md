@@ -37,12 +37,12 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 #### Folder Structure
-`/design_assets` - contains wireframes, color scheme info, other assets  (NOT YET POPULATED)
+`/design_assets` - may contain wireframes, color scheme info, other assets  (FOR REFERENCE ONLY)
 
 #### License & Copyrights
 
 All code and other content Copyright 2020 by Jamison H. Abbott, unless noted below.  
 
 ---
-Any FOSS code/content is the used under its respective licensing terms and ownership.  
+Any FOSS code/content is used under its respective licensing terms and ownership.  
 Any assets from tagup.io are included solely under the Academic Fair Use copyright doctrine, and remain the property of their owner.
