@@ -1,5 +1,10 @@
 # tagup_frontend_challenge
 
+#### Known Limitations and Considerations
+Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens
+Project not tested with a mobile device or with touch input
+Project only manually tested with these browsers: Firefox (v.78.0.2)
+
 #### Prerequisites
 Node.js  (built and tested with version: 12.8.3)  
 NPM  (built and tested with version: 6.14.6)  
