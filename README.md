@@ -1,43 +1,45 @@
 # tagup_frontend_challenge
 
-## Prerequisites
-Node.js  (built and tested with version: 12.8.3)
-NPM  (built and tested with version: 6.14.6)
-Vue.js  (build and tested with version: 3.0.0-rc.5)
+#### Prerequisites
+Node.js  (built and tested with version: 12.8.3)  
+NPM  (built and tested with version: 6.14.6)  
+Vue.js  (build and tested with version: 3.0.0-rc.5)  
 Vue CLI  (built and tested with version: 4.5.2)
 
-## Project setup
+#### Project setup
 ```
 npm install
 ```
 
-### To compile code and view results in a browser (development mode, with 'hot module replacement')
+#### To compile code and view results in a browser
+(development mode, with 'hot module replacement')
 ```
 npm run serve
 ```
 
-### Make a production build (with minimization, etc.) -- build artifacts created in `/dist`
+#### Make a production build
+(with minimization, etc.) -- build artifacts created in `/dist`
 ```
 npm run build
 ```
 
-### Run unit test suite
+#### Run unit test suite
 ```
 npm run test:unit
 ```
 
-### Lint/fix/prettify code
+#### Lint/fix/prettify code
 ```
 npm run lint
 ```
 
-### Customize configuration
+#### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Folder Structure
+#### Folder Structure
 `/design_assets` - contains wireframes, color scheme info, other assets  (NOT YET POPULATED)
 
-### License & Copyrights
+#### License & Copyrights
 
 All code and other content Copyright 2020 by Jamison H. Abbott, unless noted below.  
 
