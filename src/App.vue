@@ -44,50 +44,16 @@
 					</b-row>
 
 					<b-row style="height: 90%; background-color: #eee; border: 1px solid gray; overflow: scroll;">
-						<b-list-group style="width: 100%;">
-						  <b-list-group-item button>
-						  	<b-container>
-						  		<b-row>
-						  			<b-col class="pl-0">
-										<b-form inline>
-											<label style="font-weight: bold;">Title:</label>
-											<div style="width: 90%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-											title string goes here
-											title string goes here
-											title string goes here
-											</div>
-										</b-form>
-						  			</b-col>
-						  			<b-col class="pr-0 pl-5">
-										<b-form inline>
-											<label style="font-weight: bold;">Logged:</label>YYYY-MM-DD HH:MM:SS
-										</b-form>
-						  			</b-col>
-						  		</b-row>
-						  		<b-row class="pt-2 pb-0">
-									<b-form>
-										<label class="" style="font-weight: bold;">Message:</label>
-										<p style="margin: 0;">A very important message<br>YO !</p>
-									</b-form>
-						  		</b-row>
-						  	</b-container>
-						  </b-list-group-item>
-						  <b-list-group-item button>I am a button</b-list-group-item>
-						  <b-list-group-item button>Disabled button</b-list-group-item>
-						  <b-list-group-item button>This is a button too</b-list-group-item>
+						<b-list-group style="width: 100%; max-height: 25em;">
+							<TagupAssetIssueItem message=""/>
+							<TagupAssetIssueItem message="! SUBSTATION ON FIRE !"/>
+							<TagupAssetIssueItem message="Four score and seven years ago, ..."/>
+							<TagupAssetIssueItem message="Four score and seven years ago, Four score and seven years ago, Four score and seven years ago, Four score and seven years ago"/>
+							<TagupAssetIssueItem message="Four score and seven years ago, Four score and seven years ago, ..."/>
+							<TagupAssetIssueItem message="A"/>
+							<TagupAssetIssueItem message="Four score and seven years ago, Four score and seven years ago, ..."/>
+							<TagupAssetIssueItem message="Two words."/>
 						</b-list-group>
-<!--
-						<b-col cols="12" style="height: 5em; background-color: red;">
-							<b-row>
-								an item
-							</b-row>
-						</b-col>
-						<b-col cols="12" style="height: 5em; background-color: green;">
-							<b-row>
-								an item
-							</b-row>
-						</b-col>
--->
 					</b-row>
 
 					<b-row>
@@ -96,9 +62,8 @@
 									<b-dropdown-item active>Condensed View</b-dropdown-item>
 									<b-dropdown-item>Full Vie</b-dropdown-item>
 								</b-dropdown>
-
-								&nbsp;&nbsp;
-								<b-button>Delete Issue . . .</b-button>
+								&nbsp;
+								<TagupButton isDisabled="true" caption="Delete Issue . . ."/>
 						</b-col>
 						<b-col>&nbsp;</b-col>
 					</b-row>
@@ -121,9 +86,9 @@
 									</b-form-group>
 									<b-row class="mb-2">
 										<b-col>
-											<b-button>Add</b-button>
+											<TagupButton eventName="ADD_NEW" caption="Add" isDisabled="true"/>
 											&nbsp;
-											<b-button>Clear</b-button>
+											<TagupButton eventName="CLEAR" caption="Clear" isDisabled="true"/>
 										</b-col>
 									</b-row>
 								</b-form>
@@ -136,3 +101,12 @@
 		</b-container>
 	</div>
 </template>
+
+<script>
+/* eslint-disable */ 
+import TagupButton from "./components/TagupButton.vue";
+
+import TagupAssetIssueItem from "./components/TagupAssetIssueItem.vue";
+
+export default { components: {TagupButton, TagupAssetIssueItem} };
+</script>
