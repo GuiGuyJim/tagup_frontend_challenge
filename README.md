@@ -3,9 +3,9 @@
 #### Screen Shots
 ![Main UI](/screenshots/MainUI.png)Main UI  
   
-![HeaderWithDetailsShown](/screenshots/HeaderWithDetailsShown.png)HeaderWithDetailsShown  
+![HeaderWithDetailsShown](/screenshots/HeaderWithDetailsShown.png)Header bar, but with details shown  
   
-![ConfirmDeleteIssueModal](/screenshots/ConfirmDeleteIssueModal.png)ConfirmDeleteIssueModal  
+![ConfirmDeleteIssueModal](/screenshots/ConfirmDeleteIssueModal.png)Confirm Delete Issue modal shown  
 
 #### Known Limitations and Considerations
 Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens  
