@@ -1,6 +1,9 @@
 <template>
 	<b-button v-bind:disabled="disabled" v-on:click="clickHandler">
-		{{ caption }}
+		<!-- SECURITY: We're using v-html here, instead of double mustaches, so that we can inject markup into the button caption.
+			We should never be displaying user-provided content in caption, as that could lead to an XSS vulnerability.
+		 -->
+		<span v-html="caption"></span>
 	</b-button>
 </template>
 
@@ -22,7 +25,7 @@ export default {
 		},
 		caption: {
 			type: String, required: true
-		}
+		},
 	}
 };
 </script>

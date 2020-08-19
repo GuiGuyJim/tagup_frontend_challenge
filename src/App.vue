@@ -85,16 +85,22 @@
 							<b-col>
 								<b-form>
 									<b-form-group label="Title:" class="label">
-										<b-form-input v-model="newTitle"></b-form-input>
+										<b-form-input v-model="newTitle" v-on:input="onNewIssueFieldInput"></b-form-input>
 									</b-form-group>
 									<b-form-group label="Message:" class="mb-1 label">
-										<b-form-textarea rows="10" max-rows="10" v-model="newMessage"></b-form-textarea>
+										<b-form-textarea rows="10" max-rows="10" v-model="newMessage" v-on:input="onNewIssueFieldInput"></b-form-textarea>
 									</b-form-group>
 									<b-row class="mb-2">
 										<b-col>
-											<TagupButton caption="Add" :disabled="false" event="add" @add="addNewItem"/>
+											<div style="display: inline-block" :title="addButtonTooltip">
+											<TagupButton 
+												caption="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
+												:disabled="isAddDisabled" event="add" @add="addNewItem"/>
+											</div>
 											&nbsp;
-											<TagupButton caption="Clear" :disabled="false" event="clear" @clear="clearForm"/>
+											<div style="display: inline-block" :title="isClearDisabled ? 'Nothing to clear.' : ''">
+												<TagupButton id="" caption="Clear" :disabled="isClearDisabled" event="clear" @clear="clearForm"/>
+											</div>
 										</b-col>
 									</b-row>
 								</b-form>
@@ -146,11 +152,24 @@ export default {
 					message: 'Disatch maintenance team.' },
 				{ id: '9', timestamp: new Date(), title: 'LONG title - LONG title - LONG title - LONG title - LONG title - LONG title - LONG title - ', 
 					message: 'LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - ' },
-			]
+			],
+			isClearDisabled: true,
+			isAddDisabled: true,
 		}
 	},
 
+	computed: {
+		addButtonTooltip: function () {
+			return  this.isAddDisabled ? 'To enable, enter a Title and Message.' : '';
+		},
+	},
+
 	methods: {
+		onNewIssueFieldInput: function (event) {
+			this.isAddDisabled = !( (this.newTitle.length > 0) && (this.newMessage.length > 0) );
+			this.isClearDisabled = !( (this.newTitle.length > 0) || (this.newMessage.length > 0) );
+		},
+
 		confirmDeleteItem: function (logItem) {
 			const message = `(${logItem.timestamp.toISOString()}) "${logItem.title}"`;
 			this.$bvModal.msgBoxConfirm(message, {
@@ -182,6 +201,8 @@ export default {
 		clearForm: function () {
 			this.newTitle = '';
 			this.newMessage = '';
+			this.isClearDisabled = true;
+			this.isAddDisabled = true;
 		},
 	},
 
