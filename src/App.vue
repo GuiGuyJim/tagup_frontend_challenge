@@ -45,16 +45,9 @@
 
 					<b-row style="height: 90%; background-color: #eee; border: 1px solid gray; overflow: scroll;">
 						<b-list-group style="width: 100%; max-height: 25em;">
-							<div v-for="item in logItems" v-bind:key="item.id">
-								<TagupAssetIssueItem v-bind:logItem="item" delete="delete" @delete="confirmDeleteItem"/>
-<!--
-								<TagupAssetIssueItem v-bind="item" delete="delete" @delete="confirmDeleteItem"/>
-
-								<TagupAssetIssueItem :id="item.id" :timestamp="item.timestamp" :title="item.title" :message="item.message"
-									delete="delete" @delete="confirmDeleteItem"
-									/>
--->
-							</div>
+								<div v-for="item in logItems" v-bind:key="item.id">
+									<TagupAssetIssueItem v-bind:logItem="item" delete="delete" @delete="confirmDeleteItem"/>
+								</div>
 						</b-list-group>
 					</b-row>
 
