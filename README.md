@@ -1,5 +1,8 @@
 # tagup_frontend_challenge
 
+#### Screen Shots
+![Main UI](/src/assets/logo_at_2x.png)Main UI
+
 #### Known Limitations and Considerations
 Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens  
 'Fluid Layout' to accomodate moderate screen size changes needs some work still  
