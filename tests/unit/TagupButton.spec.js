@@ -12,8 +12,8 @@ test("TagupButton should render, with caption", () => {
   const wrapper = shallowMount(TagupButton, {
   	localVue,
   	propsData: {
-  		eventName: 'onClick',
-  		isDisabled: false,
+  		event: 'onClick',
+  		disabled: false,
   		caption: 'jim'
   	}
   });

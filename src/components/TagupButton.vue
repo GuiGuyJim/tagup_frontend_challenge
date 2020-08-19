@@ -1,5 +1,5 @@
 <template>
-	<b-button v-bind:disabled="isDisabled" v-on:click="clickHandler()">
+	<b-button v-bind:disabled="disabled" v-on:click="clickHandler">
 		{{ caption }}
 	</b-button>
 </template>
@@ -9,16 +9,15 @@
 export default {
 	methods: {
 		clickHandler: function () {
-			alert(this.eventName);
-			$emit(this.eventName, 'add optional payload here');
+			this.$emit(this.event);
 		}
 	},
 	props: {
-		isDisabled: {
+		disabled: {
 			type: Boolean,
 			default: false
 		},
-		eventName: {
+		event: {
 			type: String, required: true
 		},
 		caption: {
