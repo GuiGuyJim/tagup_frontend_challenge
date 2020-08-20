@@ -11,15 +11,23 @@
 ![ConfirmDeleteIssueModal](/screenshots/ConfirmDeleteIssueModal.png)Confirm Delete Issue modal shown  
 
 #### Known Limitations and Considerations
-Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens  
+Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens (see test matrix for details)  
 'Fluid Layout' to accomodate moderate screen size changes needs some work still  
 Code linting needs to be re-configured, so currently is selectively disabled  
 Unit test coverage is minimal  
-Project not tested with a mobile device or with touch input  
-Project only manually tested with these browsers: Firefox (v.78.0.2) on Linux  
+Project not designed for a mobile device or with touch input  
 We're importing the entire BootstrapVue component set; this causes performance warnings for the production build.
 Likely those warnings could be eliminated via using BoostrapVue in a different way.
 See: [BootstrapVue's Getting Started documentation, especially smaller bundles](https://bootstrap-vue.org/docs).
+
+#### Manual Testing Matrix -- Spot-Check Results
+Firefox (v.78.0.2) on Linux -- Working; no specific issues (development platform -- additional testing)
+Chrome 84 on OSX Yosemite -- Working, no specific issues
+Firefox 77 on OSX Yosemite -- Working, no specific issues
+Safari 10 on OSX Yosemite -- Working, minor layout issue (Delete button location)
+Firefox 78 on Windows 10 -- Working, minor layout issue (Delete button location) at some screen resolutions (e.g., 250% scaling)
+Firefox 78 on Windows 7 -- Working, layout issue (vertical scroll bar on entire page)
+Mobile Safari on iOS 13.5.1 -- Works, but layout not mobile-friendly
 
 #### Prerequisites
 Node.js  (built and tested with version: 12.8.3)  
