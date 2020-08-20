@@ -21,12 +21,12 @@ Likely those warnings could be eliminated via using BoostrapVue in a different w
 See: [BootstrapVue's Getting Started documentation, especially smaller bundles](https://bootstrap-vue.org/docs).
 
 #### Manual Testing Matrix -- Spot-Check Results
-Firefox (v.78.0.2) on Linux -- Working; no specific issues (development platform -- additional testing)
-Chrome 84 on OSX Yosemite -- Working, no specific issues
-Firefox 77 on OSX Yosemite -- Working, no specific issues
-Safari 10 on OSX Yosemite -- Working, minor layout issue (Delete button location)
-Firefox 78 on Windows 10 -- Working, minor layout issue (Delete button location) at some screen resolutions (e.g., 250% scaling)
-Firefox 78 on Windows 7 -- Working, layout issue (vertical scroll bar on entire page)
+Firefox (v.78.0.2) on Linux -- Working; no specific issues (development platform -- additional testing)  
+Chrome 84 on OSX Yosemite -- Working, no specific issues  
+Firefox 77 on OSX Yosemite -- Working, no specific issues  
+Safari 10 on OSX Yosemite -- Working, minor layout issue (Delete button location)  
+Firefox 78 on Windows 10 -- Working, minor layout issue (Delete button location) at some screen resolutions (e.g., 250% scaling)  
+Firefox 78 on Windows 7 -- Working, layout issue (vertical scroll bar on entire page)  
 Mobile Safari on iOS 13.5.1 -- Works, but layout not mobile-friendly
 
 #### Prerequisites
