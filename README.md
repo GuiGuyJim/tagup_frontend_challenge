@@ -1,5 +1,8 @@
 # tagup_frontend_challenge
 
+#### Try Out the Application:
+[https://guiguyjim.github.io/tagup_frontend_challenge/](https://guiguyjim.github.io/tagup_frontend_challenge/).
+
 #### Screen Shots
 ![Main UI](/screenshots/MainUI.png)Main UI  
   

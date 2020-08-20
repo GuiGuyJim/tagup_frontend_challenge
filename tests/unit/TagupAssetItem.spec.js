@@ -1,6 +1,5 @@
-import { shallowMount, mount, createLocalVue } from "@vue/test-utils";
-import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
-import App from "@/App.vue";
+import { shallowMount, createLocalVue } from "@vue/test-utils";
+import { BootstrapVue } from "bootstrap-vue";
 import TagupAssetIssueItem from "../../src/components/TagupAssetIssueItem.vue";
 
 const localVue = createLocalVue();
@@ -11,14 +10,14 @@ test("Asset issue item should render, with text", () => {
 	const wrapper = shallowMount(TagupAssetIssueItem, {
 		localVue,
 		propsData: {
-			delete: '',
+			delete: "",
 			logItem: {
 				timestamp: new Date(),
-				title: '',
-				message: '',
+				title: "",
+				message: ""
 			}
 		}
 	});
-	const matchValue = 'Title:  Logged:';
+	const matchValue = "Title:  Logged:";
 	expect(wrapper.text()).toMatch(matchValue);
 });
