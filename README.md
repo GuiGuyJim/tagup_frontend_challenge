@@ -11,6 +11,7 @@
 Project only designed and manually tested on 'desktop sized' (~ 1024 X 768 +) screens  
 'Fluid Layout' to accomodate moderate screen size changes needs some work still  
 Code linting needs to be re-configured, so currently is selectively disabled  
+Unit test coverage is minimal  
 Project not tested with a mobile device or with touch input  
 Project only manually tested with these browsers: Firefox (v.78.0.2) on Linux  
 We're importing the entire BootstrapVue component set; this causes performance warnings for the production build.

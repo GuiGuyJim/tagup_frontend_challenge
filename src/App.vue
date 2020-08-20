@@ -37,22 +37,22 @@
 						</b-col>
 						<b-col cols="12" md="auto" style="padding-right: 0;">
 							<b-form inline>
-							<label class="label">Filter:</label>
-							<b-form-input placeholder="Search by title..."></b-form-input>
+								<label class="label">Filter:</label>
+								<vue-typeahead-bootstrap v-model="filterQuery" :data="logItems" :serializer="item => item.title" placeholder="Filter by title. . ."/>
 							</b-form>
 						</b-col>
 					</b-row>
 
 					<b-row style="height: 90%; background-color: #eee; border: 1px solid gray; overflow: scroll;">
 						<b-list-group style="width: 100%; max-height: 25em;">
-								<div v-for="item in logItems" v-bind:key="item.id">
-									<TagupAssetIssueItem v-bind:logItem="item" delete="delete" @delete="confirmDeleteItem"/>
-								</div>
+							<div v-for="item in filteredLogItems" v-bind:key="item.id">
+								<TagupAssetIssueItem v-bind:logItem="item" delete="delete" @delete="confirmDeleteItem"/>
+							</div>
 						</b-list-group>
 					</b-row>
 
-					<!-- FUTURE: Implement: 1) feature to show alternate-sized views of the data; 
-						2) Move delete button to outside of Issues list--operate on the selected list item -->
+					<!-- FUTURE: Implement: 1) feature to show alternate-sized views of the data; 2) Consider moving the delete button to 
+						  outside of the Issues list (operating on the selected list item) -- then optimize the layout of the issue renderer -->
 					<!--
 					<b-row>
 						<b-col class="pl-0 pt-1">
@@ -131,6 +131,8 @@ export default {
 
 	data: function () {
 		return {
+			filterQuery: '',
+
 			newTitle: '',
 
 			newMessage: '',
@@ -139,9 +141,9 @@ export default {
 			[
 				{ id: 'a', timestamp: new Date(), title: 'SUBSTATION ON FIRE *!*', 
 					message: '[MANUAL ENTRY] Notify first responders at EQUIPMENT LOCALE. Follow-up with ISO emergency ops center.' },
-				{ id: 'b', timestamp: new Date(), title: 'Maximum HIGH TEMPERATURE limit reached on equipment.', 
+				{ id: 'b', timestamp: new Date(), title: '[HIGH TEMPERATURE] Maximum limit reached on equipment.', 
 					message: ' Notify rapid response team.' },
-				{ id: 'c', timestamp: new Date(), title: 'First HIGH TEMPERATURE limit exceeded.', 
+				{ id: 'c', timestamp: new Date(), title: '[HIGH TEMPERATURE] First limit exceeded.', 
 					message: 'Disatch maintenance team.' },
 				{ id: '9', timestamp: new Date(), title: 'LONG title - LONG title - LONG title - LONG title - LONG title - LONG title - LONG title - ', 
 					message: 'LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - LONG message - ' },
@@ -152,6 +154,16 @@ export default {
 	},
 
 	computed: {
+		filteredLogItems: function() {
+			const queryLength = this.filterQuery.length;
+			if (queryLength === 0) return this.logItems; // If query field is blank, show everything
+
+			const canonicalizedQuery = this.filterQuery.toLowerCase();
+			return this.logItems.filter(logItem => {
+				return (logItem.title.toLowerCase().substr(0, queryLength) === canonicalizedQuery);
+			});
+		},
+
 		addButtonTooltip: function () {
 			return  this.isAddDisabled ? 'To enable, enter a Title and Message.' : '';
 		},
@@ -189,6 +201,8 @@ export default {
 			};
 			this.logItems = [newItem, ...this.logItems];
 			this.clearForm();
+			// Explicity REMOVE the list filter, so that new item cannot be not hidden
+			this.filterQuery = '';
 		},
 
 		clearForm: function () {

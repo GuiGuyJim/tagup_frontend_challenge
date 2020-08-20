@@ -5,13 +5,23 @@
 				<b-col cols="8" class="mr-auto pl-0" style="padding-right: 0;">
 					<b-form inline>
 						<label for="titleField" class="label">Title:</label>
-						<input id="titleField" readonly :value="logItem.title" class="readOnlyField">
+						<input
+							id="titleField"
+							readonly
+							:value="logItem.title"
+							class="readOnlyField"
+						/>
 					</b-form>
 				</b-col>
 				<b-col cols="auto" class="pr-0">
 					<b-form inline>
 						<label for="timestampField" class="label">Logged:</label>
-						<input id="timestampField" readonly :value="formattedTimestamp" class="readOnlyField">
+						<input
+							id="timestampField"
+							readonly
+							:value="formattedTimestamp"
+							class="readOnlyField"
+						/>
 					</b-form>
 				</b-col>
 			</b-row>
@@ -23,7 +33,12 @@
 					</b-form>
 				</b-col>
 				<b-col cols="auto" class="pr-0">
-					<TagupButton caption="Delete Issue . . ." event="delete" @delete="clickDeleteIssueHandler" :disabled="false"/>
+					<TagupButton
+						caption="Delete Issue . . ."
+						event="delete"
+						@delete="clickDeleteIssueHandler"
+						:disabled="false"
+					/>
 				</b-col>
 			</b-row>
 		</b-container>

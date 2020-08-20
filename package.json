@@ -12,7 +12,8 @@
     "bootstrap": "^4.5.2",
     "bootstrap-vue": "^2.16.0",
     "core-js": "^3.6.5",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-typeahead-bootstrap": "^2.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -41,9 +42,15 @@
     "parserOptions": {
       "parser": "babel-eslint"
     },
-    "rules": { 
-        "indent": ["warn", "tab"],
-        "no-mixed-spaces-and-tabs": ["warn", "smart-tabs"]
+    "rules": {
+      "indent": [
+        "warn",
+        "tab"
+      ],
+      "no-mixed-spaces-and-tabs": [
+        "warn",
+        "smart-tabs"
+      ]
     },
     "overrides": [
       {
